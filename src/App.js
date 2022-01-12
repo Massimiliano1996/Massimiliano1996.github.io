@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import './index.css'
 import './App.css';
+import './assets/images/world.jpg'
+import Search from './components/Search/Search';
+import styled from 'styled-components';
+import react,{Suspense} from 'react';
+import { Canvas } from '@react-three/fiber';
+import Worlds from './components/Home/Worlds';
+
 
 function App() {
+
+const WorldContainer = styled.div`
+height:90vh;
+width:100%;
+margin-top:0;
+`
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+
+    <Search/>
+
+
+    <WorldContainer>
+
+            <Canvas>
+
+                <Suspense fallback={null}>
+                <Worlds/>
+
+
+                    
+                </Suspense>
+
+
+
+            </Canvas>
+
+
+        </WorldContainer>
+
+        </>
   );
 }
 
