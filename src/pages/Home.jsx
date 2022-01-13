@@ -24,10 +24,11 @@ import Service from '../components/Home/Service';
 export default function Home() {
 
     const WorldContainer = styled.div`
+    
     height:100vh;
     width:100%;
     margin-top:0;
-    padding-bottom:1rem;
+    
     `
 
 
@@ -35,7 +36,7 @@ export default function Home() {
 
 
     return (
-        <>
+        
 
             
 
@@ -51,15 +52,15 @@ export default function Home() {
             
 
           </Suspense>
-
+          
 
         </Canvas>
-
-        <Service/>
+        <Service/>  
+        
 
 
       </WorldContainer>
       
-    </>
+    
     )
 }
