@@ -14,7 +14,7 @@ height:2rem;
 color:white;
 justify-content:space-around;
 text-decoration:bold;
-
+padding:1rem;
 `
 
 
