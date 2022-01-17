@@ -20,8 +20,8 @@ export default function Worlds(props) {
     });
 
     return (
-        <>
-            
+        
+            <>
 
                     <Stars radius={300} />
                     <pointLight position={2, 0, 2} intensity={1} />
@@ -33,11 +33,11 @@ export default function Worlds(props) {
 
                     </mesh>
                     
-                
+                    </>
 
 
 
 
-        </>
+        
     )
 }
