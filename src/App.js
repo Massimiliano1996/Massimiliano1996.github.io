@@ -4,6 +4,7 @@ import './assets/images/world.jpg'
 import React from 'react'
 
 import Home from './pages/Home';
+import Meteo from './pages/Meteo';
 
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
 
   return (
     
+<Meteo/>
 
-
-<Home/>
+/*{<Home/>}*/
 
       
 
