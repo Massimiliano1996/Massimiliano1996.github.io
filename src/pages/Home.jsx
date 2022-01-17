@@ -4,7 +4,8 @@ import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import styled from 'styled-components';
 import Worlds from '../components/Home/Worlds';
-import Service from '../components/Home/Service';
+import Navbar from '../components/Home/Navbar';
+
 
 
 
@@ -42,7 +43,7 @@ export default function Home() {
 
 
       <WorldContainer>
-      
+      <Navbar/>
 
         <Canvas>
 
@@ -55,7 +56,7 @@ export default function Home() {
           
 
         </Canvas>
-        <Service/>  
+          
         
 
 
