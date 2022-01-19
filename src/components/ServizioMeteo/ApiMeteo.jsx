@@ -6,18 +6,43 @@ import { useEffect } from 'react'
 
 
 export default function ApiMeteo() {
+
+
+const Mydiv=styled.div`
+background-color:white;
+margin-top:2rem;
+height:10rem;
+
+`
+
+
+
+
+
+
+
 const[post,setPost]=useState()
     useEffect(() => {
-        axios.get( 'https://openweathermap.orgapi.openweathermap.org/data/2.5/weather?id=2172797&appid=e277882a9524cdb973da2b2aee6a56b0').then((res)=>{setPost(res.data);
-console.log(res.data)
+        axios.get( 'http://api.openweathermap.org/data/2.5/weather?q=Rome,Italy&appid=5927eede81005116559ee463a04139b8').then((res)=>{setPost(res.data);
+        console.log(res.data.weather)
              });
         
     }, []);
 
 
     return (
-        <div>
+        <Mydiv>
             
-        </div>
+
+
+        </Mydiv>
+      
+        
+        
+           
+        
+        
+        
+        
     )
 }

@@ -1,10 +1,10 @@
 import React, { useRef} from 'react'
-import EarthMap from '../../assets/images/Earth.jpg'
+
 import { useFrame, useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
 import EarthSpecularMap from '../../assets/images/SpecularMap.png'
 import { OrbitControls, Stars } from '@react-three/drei'
-
+import EarthMap from '../../assets/images/NasaEarth.jpg'
 
 
 export default function Worlds(props) {
