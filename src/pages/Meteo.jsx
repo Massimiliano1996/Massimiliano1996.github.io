@@ -1,14 +1,28 @@
 import React from 'react'
-import ApiMeteo from '../components/ServizioMeteo/ApiMeteo'
+import ApiMeteo from '../components/ServizioMeteo/ApiMeteo';
+import { useEffect } from 'react'
 
 
 export default function Meteo() {
 
 
-    
-    return (
-        <>
-          <ApiMeteo/>  
-        </>
-    )
+
+
+
+
+  const meteoClient = ApiMeteo();
+  useEffect(() => {
+    meteoClient.fetchMeteo()
+    console.log(meteoClient);
+
+  }, [])
+
+
+
+  return (
+    <>
+
+
+    </>
+  )
 }

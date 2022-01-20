@@ -1,48 +1,58 @@
-import React from 'react'
-import styled from 'styled-components'
+
 import axios from 'axios'
 import { useState } from 'react'
-import { useEffect } from 'react'
+
 
 
 export default function ApiMeteo() {
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(undefined);
+    const [data, setData] = useState(undefined);
+
+    const fetchMeteo = async () => {
+        try {
+            setLoading(true)
+            setError(undefined);
+
+            const result = await axios({
+                baseURL: 'http://api.openweathermap.org/data/2.5/weather?q=Rome,Italy&appid=5927eede81005116559ee463a04139b8',
+                method: 'GET'
 
 
-const Mydiv=styled.div`
-background-color:white;
-margin-top:2rem;
-height:10rem;
-
-`
 
 
 
 
+            })
+            setData(result.data.weather);
+            console.log(result.data.weather);
+            return result.data.weather
 
 
+        } catch (error) {
+            console.log(error)
+            setError(error)
+            throw (error)
 
-const[post,setPost]=useState()
-    useEffect(() => {
-        axios.get( 'http://api.openweathermap.org/data/2.5/weather?q=Rome,Italy&appid=5927eede81005116559ee463a04139b8').then((res)=>{setPost(res.data);
-        console.log(res.data.weather)
-             });
-        
-    }, []);
+
+        } finally { setLoading(false) }
+    }
+
 
 
     return (
-        <Mydiv>
-            
-
-
-        </Mydiv>
-      
         
-        
-           
-        
-        
-        
-        
+        fetchMeteo,
+        loading,
+        data,
+        error
     )
+
+
+
+
+
+
+
+
 }
