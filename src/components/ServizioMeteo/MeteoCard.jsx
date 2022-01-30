@@ -14,7 +14,7 @@ export default function MeteoCard(prop) {
     <>
     
       <Data />
-      <img src={urlImage}></img>
+      <img src={urlImage} alt='Meteo'></img>
       <h1>{prop.main}</h1>      
       <p>{prop.description}</p>
 
