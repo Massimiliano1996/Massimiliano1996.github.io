@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
 
@@ -21,9 +21,9 @@ export default function Navbar() {
 
         <NavConteiner>
                 
-           <Link to='/Meteo'>
+           <NavLink to='/Meteo'>
                 <span > Servizio Meteo </span>
-            </Link>
+            </NavLink>
                 <span>Servizio Localizzazione</span>
 
 
