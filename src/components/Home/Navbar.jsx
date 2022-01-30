@@ -1,10 +1,6 @@
-
-
-
-
-
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
 
@@ -25,8 +21,9 @@ export default function Navbar() {
 
         <NavConteiner>
                 
-           
-                <span> Servizio Meteo </span>
+           <Link to='/Meteo'>
+                <span > Servizio Meteo </span>
+            </Link>
                 <span>Servizio Localizzazione</span>
 
 
