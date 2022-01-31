@@ -1,4 +1,4 @@
-import React, { useRef} from 'react'
+import React, { useRef } from 'react'
 import EarthMap from '../../assets/images/Earth.jpg'
 import { useFrame, useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
@@ -20,24 +20,24 @@ export default function Worlds(props) {
     });
 
     return (
-        
-            <>
 
-                    <Stars radius={300} />
-                    <pointLight position={2 } intensity={1} />
-                    <mesh ref={earthRotation}>
-                        <OrbitControls enableRotate={true} rotateSpeed={0.4} enablePan={true} panSpeed={0.5} enableZoom={true} maxZoom={3} zoomSpeed={1} />
-                        <sphereGeometry args={[1.5, 40, 40]} />
-                        <meshPhongMaterial specularMap={specularMap} />
-                        <meshStandardMaterial map={colorMap} metalness={0.2} />
+        <>
 
-                    </mesh>
-                    
-                    </>
+            <Stars radius={300} />
+            <pointLight position={2} intensity={1} />
+            <mesh ref={earthRotation} >
+                <OrbitControls enableRotate={true} rotateSpeed={0.4} enablePan={true} panSpeed={0.5} enableZoom={true} maxZoom={3} zoomSpeed={1} />
+                <sphereGeometry args={[1.5, 40, 40]} />
+                <meshPhongMaterial specularMap={specularMap} />
+                <meshStandardMaterial map={colorMap} metalness={0.2} />
 
+            </mesh>
 
+        </>
 
 
-        
+
+
+
     )
 }
