@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios';
+import {useState } from 'react'
+
 import MeteoCard from '../components/ServizioMeteo/MeteoCard';
 import styled from 'styled-components';
+import ApiMeteo from '../components/ServizioMeteo/ApiMeteo';
 
 
 
@@ -9,7 +10,7 @@ import styled from 'styled-components';
 
 export default function Meteo() {
 
-  const [data, setData] = useState([]);
+  
   const [city, setCity] = useState('');
 
   const SearchCity = styled.input`
@@ -20,20 +21,7 @@ export default function Meteo() {
 
 
   
-    useEffect(() => {
-      (async () => {
-        try {
-          setCity('Rome');
-          const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q='${city}'&appid=5927eede81005116559ee463a04139b8`);
-          return res.data.weather;
-        } catch (errors) {
-          console.log(errors);
-        }
-
-
-
-      })().then((res) => setData(res));
-    }, []);
+    
     
   
 
@@ -49,21 +37,10 @@ export default function Meteo() {
       <SearchCity value={city} onInput={e => { setCity(e.target.value) }}
       />
       
-      {
-
-        data.map((item) => (
-          <MeteoCard
-            icon={item.icon}
-            key={item.id}
-            main={item.main}
-            id={item.id}
-            description={item.description}
-
-
-          />
-        ))
-
-      }
+      <MeteoCard/>
+      <ApiMeteo
+      city={city}
+      />
 
 
 
