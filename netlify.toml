@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://meteoh24.netlify.app"
+  to = "https://meteoh24/Meteo.netlify.app"
+  status = 200
+  force = true
