@@ -5,19 +5,22 @@ import Data from '../Data';
 
 export default function MeteoCard(prop) {
 
-  const urlImage = `http://openweathermap.org/img/wn/${prop.icon}@4x.png`
-
-
-  
+  const urlImage = `https://openweathermap.org/img/wn/${prop.icon}@2x.png`
 
   return (
     <>
-    
-      <Data />
-      <img src={urlImage} alt='Meteo'></img>
-      <h1>{prop.main}</h1>      
-      <p>{prop.description}</p>
 
+
+      <h2>{prop.city}</h2>
+      {!!prop.city
+        ? <Data />
+        : null}
+      {!!prop.icon
+        ? <img src={urlImage} alt="Meteo" />
+        : null
+      }
+      <h1>{prop.main}</h1>
+      <p>{prop.description}</p>
 
     </>
 
