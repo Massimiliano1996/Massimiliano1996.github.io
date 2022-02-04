@@ -74,7 +74,14 @@ export default function Meteo() {
           e.target.style.setProperty('--x', `${x}px`)
           e.target.style.setProperty('--y', `${y}px`)
 
-        }}
+        }} onPress={e =>{
+
+          const x = e.pageX - e.target.offsetLeft
+          const y = e.pageY - e.target.offsetTop
+
+          e.target.style.setProperty('--x', `${x}px`)
+          e.target.style.setProperty('--y', `${y}px`)
+}}
         />
         <MyButton type="submit" value='Search' onMouseMove={(e) => {
 
