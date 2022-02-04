@@ -58,7 +58,7 @@ export default function Meteo() {
   
   `
  */
-  let inputSearch = document.getElementById('searchCity');
+  
 
 
 
